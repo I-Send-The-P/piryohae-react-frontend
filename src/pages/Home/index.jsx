@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   ROUTES_PATH_BLOOD_REQUEST_NEW,
   ROUTES_PATH_BLOOD_REQUESTS,
+  ROUTES_PATH_INTRODUCE,
   ROUTES_PATH_MY_PAGE,
   ROUTES_PATH_NOTICE,
   ROUTES_PATH_QUESTION,
@@ -38,7 +39,7 @@ function Home() {
       <ContentTitle style={{ margin: "30px 0px 10px" }}>회원</ContentTitle>
       <Menu style={{ height: "110px" }}>
         <MenuButton
-          onClick={() => navigate(ROUTES_PATH_NOTICE)}
+          onClick={() => navigate(ROUTES_PATH_INTRODUCE)}
           size={"small"}
           subTitle={
             <>

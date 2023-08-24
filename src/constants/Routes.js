@@ -4,6 +4,7 @@ export const ROUTES_PATH_ROOT = "/";
 export const ROUTES_PATH_LOGIN = "/login";
 export const ROUTES_PATH_SIGNUP = "/signup";
 export const ROUTES_PATH_HOME = "/home";
+export const ROUTES_PATH_INTRODUCE = "/introduce";
 export const ROUTES_PATH_BLOOD_REQUEST = "/blood-request";
 export const ROUTES_PATH_BLOOD_REQUEST_NEW = "/blood-request/new";
 export const ROUTES_PATH_BLOOD_REQUEST_COMPLETE = "/blood-request/complete";
