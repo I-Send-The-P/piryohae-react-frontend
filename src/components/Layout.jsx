@@ -22,6 +22,7 @@ export const BaseLayout = ({
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+  max-width: 393px;
   display: flex;
   flex-direction: column;
   overflow: hidden;

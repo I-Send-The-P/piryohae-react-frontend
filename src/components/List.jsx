@@ -79,9 +79,16 @@ const ListItemContent = styled.div`
   max-height: 3.6em;
 `;
 
-export const ListItem = ({ bloodType, status, title, date, content }) => {
+export const ListItem = ({
+  bloodType,
+  status,
+  title,
+  date,
+  content,
+  onClick,
+}) => {
   return (
-    <ListItemContainer>
+    <ListItemContainer onClick={onClick}>
       <ListItemHeader>
         <Tag style={{ backgroundColor: "#EC9898" }}>{bloodType}</Tag>
         <Tag

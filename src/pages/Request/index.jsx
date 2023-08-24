@@ -6,9 +6,10 @@ import {
 } from "components/Content";
 import { Button, TextInput } from "components/Input";
 import { LeftTitle } from "pages/Signup/styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Select } from "pages/Signup/styled";
 import { Tag } from "pages/Question/styled";
+import { getRequest } from "api/RequestsAPI";
 
 function Request() {
   const [isMine, setIsMine] = useState(false);
@@ -24,6 +25,24 @@ function Request() {
   const [relationShip, setRelationShip] = useState("");
   const [content, setContent] = useState("");
   const [bloodDonationTypeId, setBloodDonationTypeId] = useState(1);
+
+  useEffect(() => {
+    const requestId = window.location.pathname.split("/")[2];
+    getRequest(requestId).then((res) => {
+      setBloodDonationTypeId(res.data.bloodDonationTypeId);
+      setContent(res.data.content);
+      setRelationShip(res.data.relationship);
+      setDeadline(res.data.deadline);
+      setBloodProduct(res.data.bloodProduct);
+      setBloodTypeId(res.data.bloodTypeId);
+      setHospitalNumber(res.data.hospitalNumber);
+      setHospitalName(res.data.hospitalName);
+      setRegisterNumber(res.data.registerNumber);
+      setTitle(res.data.title);
+      setStatus(res.data.requestStatusId);
+    }, []);
+  });
+
   return (
     <ContentContainer style={{ alignItems: "start" }}>
       {isMine ? (

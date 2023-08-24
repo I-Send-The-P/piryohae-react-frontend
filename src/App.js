@@ -133,7 +133,7 @@ function App() {
           }
         />
         <Route
-          path={ROUTES_PATH_BLOOD_REQUEST}
+          path={ROUTES_PATH_BLOOD_REQUEST + "/*"}
           element={
             <BaseLayout title={"긴급헌혈 요청서"} isLogin={true}>
               <Request />
