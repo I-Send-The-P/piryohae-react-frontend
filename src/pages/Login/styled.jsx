@@ -30,3 +30,5 @@ export const Input = styled(TextInput)`
 export const LoginButton = styled(Button)`
   margin: 60px 0px 30px 0px;
 `;
+
+export const Logo = styled.img``;

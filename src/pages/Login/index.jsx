@@ -1,4 +1,4 @@
-import { SubTitle, Title, Input, LoginButton } from "./styled";
+import { SubTitle, Input, LoginButton, Logo } from "./styled";
 import { TextLink } from "components/Input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ function Login() {
 
   return (
     <ContentContainer style={{ paddingTop: "98px" }}>
-      <Title>피료해</Title>
+      <Logo src="/png/logo.png"></Logo>
       <SubTitle></SubTitle>
       <Input
         placeholder="아이디"

@@ -40,7 +40,10 @@ function App() {
         <Route
           path={ROUTES_PATH_HOME}
           element={
-            <BaseLayout title={"피료해"} isHome={true}>
+            <BaseLayout
+              title={<img src="/png/logo.png" style={{ height: "100%" }}></img>}
+              isHome={true}
+            >
               <Home />
             </BaseLayout>
           }
