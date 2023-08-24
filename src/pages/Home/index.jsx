@@ -19,8 +19,10 @@ function Home() {
           onClick={() => navigate(ROUTES_PATH_BLOOD_REQUEST)}
           subTitle={"긴급헌혈"}
           title={"요청하기"}
+          size={"big"}
         ></MenuButton>
         <MenuButton
+          size={"big"}
           onClick={() => navigate(ROUTES_PATH_BLOOD_REQUESTS)}
           subTitle={"긴급헌혈"}
           title={
@@ -36,7 +38,7 @@ function Home() {
       <Menu style={{ height: "110px" }}>
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_NOTICE)}
-          isSmall={true}
+          size={"small"}
           subTitle={
             <>
               서비스
@@ -48,7 +50,7 @@ function Home() {
         />
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_QUESTION)}
-          isSmall={true}
+          size={"small"}
           subTitle={
             <>
               고객
@@ -59,8 +61,8 @@ function Home() {
           icon={"/png/chat.png"}
         />
         <MenuButton
-          onClick={() => navigate(ROUTES_PATH_QUESTION)}
-          isSmall={true}
+          onClick={() => navigate(ROUTES_PATH_NOTICE)}
+          size={"small"}
           subTitle={
             <>
               공지
@@ -72,7 +74,7 @@ function Home() {
         />
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_MY_PAGE)}
-          isSmall={true}
+          size={"small"}
           subTitle={
             <>
               마이
@@ -87,7 +89,7 @@ function Home() {
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_NOTICE)}
           subTitle={"헌혈 명예의 전당"}
-          isSmall={true}
+          size={"small"}
           icon={"png/rank.png"}
         ></MenuButton>
       </Menu>

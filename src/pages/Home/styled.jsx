@@ -9,7 +9,7 @@ export const Menu = styled.div`
   gap: 13px;
 `;
 
-export const MenuItem = styled.button`
+export const MenuItem = styled.div`
   position: relative;
   flex: 1;
   flex-shrink: 0;
@@ -32,12 +32,12 @@ export const MenuTitle = styled.h1`
   line-height: normal;
   margin: 0px;
 `;
-export const MenuSubTitle = styled.h1`
+export const MenuSubTitle = styled.span`
   color: #000;
   font-family: Cafe24 Ssurround air;
-  font-size: ${(props) => (props.isSmall ? "20px" : "30px")};
+  font-size: ${(props) => (props.size === "small" ? "20px" : "30px")};
   font-style: normal;
-  font-weight: ${(props) => (props.isSmall ? 300 : 700)};
+  font-weight: ${(props) => (props.size === "small" ? 300 : 700)};
   line-height: normal;
   margin: 0px;
 `;
@@ -61,10 +61,16 @@ export const DefaultIcon = styled.div`
   line-height: normal;
 `;
 
-export const MenuButton = ({ title, subTitle, icon, isSmall = false }) => {
+export const MenuButton = ({
+  title,
+  subTitle,
+  icon,
+  size = "big",
+  onClick,
+}) => {
   return (
-    <MenuItem>
-      <MenuSubTitle isSmall={isSmall}>{subTitle}</MenuSubTitle>
+    <MenuItem onClick={onClick}>
+      <MenuSubTitle size={size}>{subTitle}</MenuSubTitle>
       <MenuTitle>{title}</MenuTitle>
       {icon ? <MenuIcon src={icon} /> : <DefaultIcon>&gt;</DefaultIcon>}
     </MenuItem>
