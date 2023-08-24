@@ -9,7 +9,10 @@ import {
   getBloodDonationCategories,
 } from "api/CategoriesAPI";
 import { postRequest } from "api/RequestsAPI";
-import { ROUTES_PATH_HOME } from "constants/Routes";
+import {
+  ROUTES_PATH_BLOOD_REQUEST_COMPLETE,
+  ROUTES_PATH_HOME,
+} from "constants/Routes";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -118,9 +121,11 @@ function RequestNew() {
             relationship,
             content,
             bloodDonationTypeId: +bloodDonationTypeId,
-          }).then(() => {
+          }).then((res) => {
             alert("요청이 완료되었습니다.");
-            navigate(ROUTES_PATH_HOME);
+            navigate(ROUTES_PATH_BLOOD_REQUEST_COMPLETE, {
+              state: res.data,
+            });
           });
         }}
       >
