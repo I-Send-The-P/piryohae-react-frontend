@@ -16,7 +16,7 @@ function App() {
         <Route
           path={ROUTES_PATH_HOME}
           element={
-            <BaseLayout title={"피료해"}>
+            <BaseLayout title={"피료해"} isHome={true}>
               <Home />
             </BaseLayout>
           }

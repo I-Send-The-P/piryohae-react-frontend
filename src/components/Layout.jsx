@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 const { styled } = require("styled-components");
 
-export const BaseLayout = ({ children, title }) => {
+export const BaseLayout = ({ children, title, isHome = false }) => {
   return (
     <Container>
-      <TopBar title={title} />
+      <TopBar title={title} isHome={isHome} />
       {children}
     </Container>
   );
@@ -72,11 +72,11 @@ const Alarm = styled.button`
   background-size: 100% 100%;
 `;
 
-const TopBar = ({ title }) => {
+const TopBar = ({ title, isHome }) => {
   const navigate = useNavigate();
   return (
     <TopBarStyle>
-      <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>
+      {isHome ?? <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>}
       <Logo>{title}</Logo>
       <Alarm />
     </TopBarStyle>
