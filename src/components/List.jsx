@@ -61,7 +61,25 @@ const Date = styled.div`
   line-height: normal;
 `;
 
-export const ListItem = ({ bloodType, status, title, date }) => {
+const ListItemContent = styled.div`
+  width: 100%;
+  display: flex;
+  color: #8f8f8f;
+  font-family: Cafe24 Ssurround air;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: 1.2em;
+  max-height: 3.6em;
+`;
+
+export const ListItem = ({ bloodType, status, title, date, content }) => {
   return (
     <ListItemContainer>
       <ListItemHeader>
@@ -77,6 +95,7 @@ export const ListItem = ({ bloodType, status, title, date }) => {
         <Date>{date}</Date>
       </ListItemHeader>
       <ListItemTitle>{title}</ListItemTitle>
+      <ListItemContent>{content}</ListItemContent>
     </ListItemContainer>
   );
 };

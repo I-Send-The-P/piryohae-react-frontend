@@ -26,6 +26,9 @@ function BloodInfo() {
           status={true}
           title={"지정헌혈 부탁드립니다."}
           date={"2023.04.02"}
+          content={
+            "내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
+          }
         ></ListItem>
         <ListItem
           bloodType={"B+"}

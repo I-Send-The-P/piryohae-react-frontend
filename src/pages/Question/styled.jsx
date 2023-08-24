@@ -79,7 +79,7 @@ const QuestionTitle = styled.div`
   text-overflow: ellipsis;
   word-break: break-all;
   overflow: hidden;
-  text-wrap: nowrap;
+  white-space: nowrap;
 `;
 const Icon = styled.span`
   color: #000;
