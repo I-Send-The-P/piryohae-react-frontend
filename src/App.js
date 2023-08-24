@@ -17,6 +17,7 @@ import {
   ROUTES_PATH_BLOOD_REQUEST_CAUTION,
   ROUTES_PATH_BLOOD_REQUEST_COMPLETE,
   ROUTES_PATH_INTRODUCE,
+  ROUTES_PATH_ALARM,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
@@ -34,6 +35,7 @@ import RequestNew from "pages/Request/New";
 import RequestComplete from "pages/Request/Complete";
 import RequestCaution from "pages/Request/Caution";
 import Introduce from "pages/Introduce";
+import Alarm from "pages/Alarm";
 
 function App() {
   return (
@@ -167,6 +169,14 @@ function App() {
           element={
             <BaseLayout title={"MY PAGE"} isLogin={true}>
               <MyPage />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_ALARM}
+          element={
+            <BaseLayout title={"알림"} isLogin={true}>
+              <Alarm />
             </BaseLayout>
           }
         />

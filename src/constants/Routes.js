@@ -16,3 +16,4 @@ export const ROUTES_PATH_MY_PAGE = "/my-page";
 export const ROUTES_PATH_QUESTION = "/question";
 export const ROUTES_PATH_QUESTION_NEW = "/question/new";
 export const ROUTES_PATH_QUESTIONS = "/questions";
+export const ROUTES_PATH_ALARM = "/alarm";

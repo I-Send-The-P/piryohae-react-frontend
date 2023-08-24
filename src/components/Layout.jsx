@@ -1,4 +1,7 @@
+import { ROUTES_PATH_ALARM } from "constants/Routes";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const { styled } = require("styled-components");
 
@@ -77,6 +80,48 @@ const Alarm = styled.button`
   background-size: 100% 100%;
 `;
 
+export const Switch = styled.div`
+  box-sizing: border-box;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: 3px solid #c82525;
+  background-color: #fff;
+`;
+export const SwitchButton = styled.div`
+  box-sizing: border-box;
+  padding: 5px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Cafe24 Ssurround;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  background-color: ${(props) => (props.checked ? "#c82525" : "#fff")};
+  color: ${(props) => (props.checked ? "#fff" : "#A9A9A9")};
+  border-radius: 15px;
+  margin: 0;
+`;
+
+const AlarmToggle = () => {
+  const [isAlarm, setIsAlarm] = useState(false);
+  return (
+    <Switch>
+      <SwitchButton checked={isAlarm} onClick={() => setIsAlarm(true)}>
+        ON
+      </SwitchButton>
+      <SwitchButton checked={!isAlarm} onClick={() => setIsAlarm(false)}>
+        OFF
+      </SwitchButton>
+    </Switch>
+  );
+};
+
 const Blank = styled.div`
   width: 28px;
   height: 28px;
@@ -84,11 +129,20 @@ const Blank = styled.div`
 
 const TopBar = ({ title, isHome, isLogin }) => {
   const navigate = useNavigate();
+  const location = useLocation().pathname;
   return (
     <TopBarStyle>
       {isHome || <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>}
       <Logo>{title}</Logo>
-      {isLogin ? <Alarm /> : <Blank />}
+      {isLogin ? (
+        location === ROUTES_PATH_ALARM ? (
+          <AlarmToggle />
+        ) : (
+          <Alarm onClick={() => navigate(ROUTES_PATH_ALARM)} />
+        )
+      ) : (
+        <Blank />
+      )}
     </TopBarStyle>
   );
 };
