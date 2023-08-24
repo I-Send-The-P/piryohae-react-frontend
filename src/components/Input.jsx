@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export const TextInput = styled.input`
   box-sizing: border-box;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 7px;
   background: #fff;
   border: none;
-  text-align: center;
+  text-align: left;
   font-family: Cafe24 Ssurround air;
   &:focus,
   &:active,
