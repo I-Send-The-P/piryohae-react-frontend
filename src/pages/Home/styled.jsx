@@ -27,7 +27,7 @@ export const MenuItem = styled.div`
 export const MenuTitle = styled.h1`
   color: #000;
   font-family: Cafe24 Ssurround;
-  font-size: 30px;
+  font-size: ${(props) => (props.size === "small" ? "20px" : "30px")};
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -72,7 +72,7 @@ export const MenuButton = ({
   return (
     <MenuItem onClick={onClick}>
       <MenuSubTitle size={size}>{subTitle}</MenuSubTitle>
-      <MenuTitle>{title}</MenuTitle>
+      <MenuTitle size={size}>{title}</MenuTitle>
       {icon ? <MenuIcon src={icon} /> : <DefaultIcon>&gt;</DefaultIcon>}
     </MenuItem>
   );
