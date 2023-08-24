@@ -10,13 +10,19 @@ import {
 } from "constants/Api";
 
 export const postDuplicateLoginId = (data) => {
-  return axios.post(BASE_URL + POST_DUPLICATE_LOGINID, data);
+  return axios.post(
+    BASE_URL + POST_DUPLICATE_LOGINID.replace("{loginId}", data)
+  );
 };
 export const postDuplicateNickName = (data) => {
-  return axios.post(BASE_URL + POST_DUPLICATE_NICKNAME, data);
+  return axios.post(
+    BASE_URL + POST_DUPLICATE_NICKNAME.replace("{nickname}", data)
+  );
 };
 export const postDuplicatePhoneNumber = (data) => {
-  return axios.post(BASE_URL + POST_DUPLICATE_PHONENUMBER, data);
+  return axios.post(
+    BASE_URL + POST_DUPLICATE_PHONENUMBER.replace("{phoneNumber}", data)
+  );
 };
 export const postMember = (data) => {
   return axios.post(BASE_URL + POST_MEMBER, data);

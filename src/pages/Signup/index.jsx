@@ -8,10 +8,20 @@ import {
   ToggleButton,
   Select,
 } from "./styled";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DaumMapModal } from "components/Map";
+import { getBloodTypeCategories } from "api/CategoriesAPI";
+import {
+  postDuplicateLoginId,
+  postDuplicatePhoneNumber,
+  postDuplicateNickName,
+  postMember,
+} from "api/MembersAPI";
+import { ROUTES_PATH_LOGIN } from "constants/Routes";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate();
   const [id, setId] = useState("");
   const [isIdChecked, setIsIdChecked] = useState(false);
   const [pw, setPw] = useState("");
@@ -24,11 +34,14 @@ function Signup() {
   const [isPhoneChecked, setIsPhoneChecked] = useState(false);
   const [address, setAddress] = useState("");
   const [detailAddress, setDetailAddress] = useState("");
-  const [blood, setBlood] = useState("A+");
+  const [blood, setBlood] = useState(1);
   const [nickname, setNickname] = useState("");
   const [isNicknameChecked, setIsNicknameChecked] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-
+  const [bloodTypes, setBloodTypes] = useState([]);
+  useEffect(() => {
+    getBloodTypeCategories().then((res) => setBloodTypes(res.data));
+  }, []);
   return (
     <>
       {modalVisible && (
@@ -44,9 +57,19 @@ function Signup() {
             style={{ flex: 1 }}
             placeholder="ID를 입력하세요"
             value={id}
-            onChange={(e) => setId(e.target.value)}
+            onChange={(e) => {
+              setId(e.target.value);
+              setIsIdChecked(false);
+            }}
           ></TextInput>
-          <CheckButton checked={isIdChecked}>
+          <CheckButton
+            checked={isIdChecked}
+            onClick={() => {
+              postDuplicateLoginId(id).then(() => {
+                setIsIdChecked(true);
+              });
+            }}
+          >
             중복
             <br />
             확인
@@ -99,9 +122,19 @@ function Signup() {
             style={{ flex: 1 }}
             placeholder="-를 제외하고 입력하세요"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => {
+              setPhone(e.target.value);
+              setIsPhoneChecked(false);
+            }}
           ></TextInput>
-          <CheckButton checked={isPhoneChecked}>
+          <CheckButton
+            checked={isPhoneChecked}
+            onClick={() => {
+              postDuplicatePhoneNumber(phone).then((res) => {
+                setIsPhoneChecked(true);
+              });
+            }}
+          >
             중복
             <br />
             확인
@@ -129,14 +162,11 @@ function Signup() {
         ></TextInput>
         <LeftTitle>혈액</LeftTitle>
         <Select value={blood} onChange={(e) => setBlood(e.target.value)}>
-          <option value={"A+"}>A+</option>
-          <option value={"A-"}>A-</option>
-          <option value={"B+"}>B+</option>
-          <option value={"B-"}>B-</option>
-          <option value={"O+"}>O+</option>
-          <option value={"O-"}>O-</option>
-          <option value={"AB+"}>AB+</option>
-          <option value={"AB-"}>AB-</option>
+          {bloodTypes?.map((bloodType) => (
+            <option key={bloodType.id} value={bloodType.id}>
+              {bloodType.bloodType}
+            </option>
+          ))}
         </Select>
         <LeftTitle>닉네임</LeftTitle>
         <CheckContainer>
@@ -144,15 +174,46 @@ function Signup() {
             style={{ flex: 1 }}
             placeholder="닉네임을 입력하세요"
             value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
+            onChange={(e) => {
+              setNickname(e.target.value);
+              setIsNicknameChecked(false);
+            }}
           ></TextInput>
-          <CheckButton checked={isNicknameChecked}>
+          <CheckButton
+            checked={isNicknameChecked}
+            onClick={() => {
+              postDuplicateNickName(nickname).then(() => {
+                setIsNicknameChecked(true);
+              });
+            }}
+          >
             중복
             <br />
             확인
           </CheckButton>
         </CheckContainer>
-        <SignupButton>회원가입</SignupButton>
+        <SignupButton
+          onClick={() => {
+            postMember({
+              loginId: id,
+              password: pw,
+              rePassword: pwCheck,
+              name: name,
+              age: +birth,
+              gender: isMan,
+              email: email,
+              phoneNumber: phone,
+              address: address + detailAddress,
+              bloodType: +blood,
+              nickname: nickname,
+            }).then((res) => {
+              alert("회원가입이 완료되었습니다.");
+              navigate(ROUTES_PATH_LOGIN);
+            });
+          }}
+        >
+          회원가입
+        </SignupButton>
       </ContentContainer>
     </>
   );

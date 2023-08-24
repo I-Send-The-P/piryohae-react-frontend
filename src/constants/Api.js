@@ -1,4 +1,4 @@
-export const BASE_URL = "172.20.10.2:8080";
+export const BASE_URL = "//172.20.10.2:8080";
 // REQUESTS
 export const GET_REQUESTS = "/api/requests";
 export const GET_REQUEST = "/api/requests/{requestId}";
@@ -25,9 +25,12 @@ export const GET_QUESTION = "/api/helps/{questionId}";
 export const GET_FAQS = "/api/helps/faq";
 export const POST_ANSWER = "/api/helps/{questionId}/answer";
 // MEMBERS
-export const POST_DUPLICATE_LOGINID = "/api/members/duplicate/loginId?loginId";
-export const POST_DUPLICATE_NICKNAME = "/api/members/duplicate/nickname";
-export const POST_DUPLICATE_PHONENUMBER = "/api/members/duplicate/phoneNumber";
+export const POST_DUPLICATE_LOGINID =
+  "/api/members/duplicate/loginId?loginId={loginId}";
+export const POST_DUPLICATE_NICKNAME =
+  "/api/members/duplicate/nickname?nickname={nickname}";
+export const POST_DUPLICATE_PHONENUMBER =
+  "/api/members/duplicate/phoneNumber?phoneNumber={phoneNumber}";
 export const POST_MEMBER = "/api/members";
 export const GET_MEMBER = "/api/members/{memberId}";
 export const PUT_MEMBER = "/api/members/{memberId}";
@@ -40,6 +43,6 @@ export const GET_BANNERS = "/api/banners";
 // CATEGORIES
 export const GET_ACCEPTS_STATUS_CATEGORIES = "/api/acceptStatusCategories";
 export const GET_BLOOD_DONATION_CATEGORIES = "/api/bloodDonationCategories";
-export const GET_BLOOD_TYPE_CATEGORIES = "/api/bloodTypeCategorie";
-export const GET_QUESTION_TYPE_CATEGORIES = "/api/questionTypeCategorie";
+export const GET_BLOOD_TYPE_CATEGORIES = "/api/bloodTypeCategories";
+export const GET_QUESTION_TYPE_CATEGORIES = "/api/questionTypeCategories";
 export const GET_REQUESTS_STATUS_CATEGORIES = "/api/requestStatusCategories";
