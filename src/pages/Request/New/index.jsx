@@ -3,23 +3,40 @@ import { Button, TextInput } from "components/Input";
 import { LeftTitle } from "pages/Signup/styled";
 import { useState } from "react";
 import { Select } from "pages/Signup/styled";
+import { useEffect } from "react";
+import {
+  getBloodTypeCategories,
+  getBloodDonationCategories,
+} from "api/CategoriesAPI";
+import { postRequest } from "api/RequestsAPI";
+import { ROUTES_PATH_HOME } from "constants/Routes";
+import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function RequestNew() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [registerNumber, setRegisterNumber] = useState("");
   const [hospitalName, setHospitalName] = useState("");
   const [hospitalNumber, setHospitalNumber] = useState("");
   const [bloodTypeId, setBloodTypeId] = useState(1);
   const [bloodProduct, setBloodProduct] = useState("");
-  const [deadline, setDeadline] = useState("");
-  const [relationShip, setRelationShip] = useState("");
+  const [deadline, setDeadline] = useState(new Date());
+  const [relationship, setRelationship] = useState("");
   const [content, setContent] = useState("");
   const [bloodDonationTypeId, setBloodDonationTypeId] = useState(1);
+  const [bloodTypes, setBloodTypes] = useState([]);
+  const [bloodDonationTypes, setBloodDonationTypes] = useState([]);
+  useEffect(() => {
+    getBloodTypeCategories().then((res) => setBloodTypes(res.data));
+    getBloodDonationCategories().then((res) => setBloodDonationTypes(res.data));
+  }, []);
   return (
     <ContentContainer style={{ alignItems: "start" }}>
       <LeftTitle style={{ margin: 0 }}>제목</LeftTitle>
       <TextInput
-        placeholder="번호를 입력하세요"
+        placeholder="제목을 입력하세요"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       ></TextInput>
@@ -31,13 +48,13 @@ function RequestNew() {
       ></TextInput>
       <LeftTitle>요청 의료기관 이름</LeftTitle>
       <TextInput
-        placeholder="번호를 입력하세요"
+        placeholder="의료기관 이름을 입력하세요"
         value={hospitalName}
         onChange={(e) => setHospitalName(e.target.value)}
       ></TextInput>
       <LeftTitle>요청 의료기관 번호</LeftTitle>
       <TextInput
-        placeholder="번호를 입력하세요"
+        placeholder="의료기관 번호를 입력하세요"
         value={hospitalNumber}
         onChange={(e) => setHospitalNumber(e.target.value)}
       ></TextInput>
@@ -46,36 +63,33 @@ function RequestNew() {
         value={bloodTypeId}
         onChange={(e) => setBloodTypeId(e.target.value)}
       >
-        <option value={1}>A+</option>
-        <option value={2}>A-</option>
-        <option value={3}>B+</option>
-        <option value={4}>B-</option>
-        <option value={5}>O+</option>
-        <option value={6}>O-</option>
-        <option value={7}>AB+</option>
-        <option value={8}>AB-</option>
+        {bloodTypes?.map((bloodType) => (
+          <option key={bloodType.id} value={bloodType.id}>
+            {bloodType.bloodType}
+          </option>
+        ))}
       </Select>
       <LeftTitle>필요 혈액 제제</LeftTitle>
       <TextInput
-        placeholder="번호를 입력하세요"
+        placeholder="필요 혈액 제제를 입력하세요"
         value={bloodProduct}
         onChange={(e) => setBloodProduct(e.target.value)}
       ></TextInput>
       <LeftTitle>마감기한</LeftTitle>
-      <TextInput
-        placeholder="번호를 입력하세요"
-        value={deadline}
-        onChange={(e) => setDeadline(e.target.value)}
-      ></TextInput>
+      <DatePicker
+        showIcon
+        selected={deadline}
+        onChange={(date) => setDeadline(date)}
+      />
       <LeftTitle>환자와의 관계</LeftTitle>
       <TextInput
-        placeholder="번호를 입력하세요"
-        value={relationShip}
-        onChange={(e) => setRelationShip(e.target.value)}
+        placeholder="환자와의 관계를 입력하세요"
+        value={relationship}
+        onChange={(e) => setRelationship(e.target.value)}
       ></TextInput>
       <LeftTitle>요청 사연</LeftTitle>
       <TextInput
-        placeholder="번호를 입력하세요"
+        placeholder="내용을 입력하세요"
         value={content}
         onChange={(e) => setContent(e.target.value)}
       ></TextInput>
@@ -84,11 +98,34 @@ function RequestNew() {
         value={bloodDonationTypeId}
         onChange={(e) => setBloodDonationTypeId(e.target.value)}
       >
-        <option value={1}>전혈</option>
-        <option value={2}>혈소판</option>
+        {bloodDonationTypes?.map((bloodDonationType) => (
+          <option key={bloodDonationType.id} value={bloodDonationType.id}>
+            {bloodDonationType.bloodDonation}
+          </option>
+        ))}
       </Select>
       <LeftTitle></LeftTitle>
-      <Button>요청하기</Button>
+      <Button
+        onClick={() => {
+          postRequest({
+            title,
+            registerNumber: registerNumber,
+            hospitalName,
+            hospitalNumber: hospitalNumber,
+            myBloodTypeId: +bloodTypeId,
+            bloodProduct,
+            deadline: deadline.toISOString(),
+            relationship,
+            content,
+            bloodDonationTypeId: +bloodDonationTypeId,
+          }).then(() => {
+            alert("요청이 완료되었습니다.");
+            navigate(ROUTES_PATH_HOME);
+          });
+        }}
+      >
+        요청하기
+      </Button>
     </ContentContainer>
   );
 }
