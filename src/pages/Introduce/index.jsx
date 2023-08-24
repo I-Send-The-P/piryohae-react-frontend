@@ -4,7 +4,7 @@ import { Logo, Content, Bold } from "./styled";
 function Introduce() {
   return (
     <ContentContainer>
-      <Logo src="/png/logo.png" />
+      <Logo src="png/logo.png" />
       <Content>
         <Bold>우리는 모두 ‘가뭄에 뿌려지는 단비’가 될 수 있습니다.</Bold>
         <br />

@@ -17,7 +17,7 @@ function Login() {
 
   return (
     <ContentContainer style={{ paddingTop: "98px" }}>
-      <Logo src="/png/logo.png"></Logo>
+      <Logo src="png/logo.png"></Logo>
       <SubTitle></SubTitle>
       <Input
         placeholder="아이디"

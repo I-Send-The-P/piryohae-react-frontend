@@ -48,7 +48,7 @@ function Home() {
               소개
             </>
           }
-          icon={"/png/info.png"}
+          icon={"png/info.png"}
         />
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_QUESTION)}
@@ -60,7 +60,7 @@ function Home() {
               센터
             </>
           }
-          icon={"/png/chat.png"}
+          icon={"png/chat.png"}
         />
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_NOTICE)}
@@ -72,7 +72,7 @@ function Home() {
               사항
             </>
           }
-          icon={"/png/sound.png"}
+          icon={"png/sound.png"}
         />
         <MenuButton
           onClick={() => navigate(ROUTES_PATH_MY_PAGE)}
@@ -84,7 +84,7 @@ function Home() {
               페이지
             </>
           }
-          icon={"/png/user.png"}
+          icon={"png/user.png"}
         />
       </Menu>
       <Menu style={{ height: "50px", margin: "12px 0px" }}>

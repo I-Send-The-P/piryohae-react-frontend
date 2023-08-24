@@ -119,7 +119,7 @@ export const Banner = () => {
   }, []);
   return (
     <BannerStyle>
-      <BannerImage src={`/png/banner${banner}.png`} />
+      <BannerImage src={`png/banner${banner}.png`} />
       <IndexCircleContainer>
         {Array(4)
           .fill()
