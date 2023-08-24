@@ -1,25 +1,27 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "name": "PiRyoHae",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "prh",
+  "start_url": "/",
+  "theme_color": "#c82525",
+  "categories": [
+    "health",
+    "medical"
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "screenshots": [],
+  "icons": [],
+  "shortcuts": [],
+  "id": "PiRyoHae",
+  "dir": "ltr",
+  "lang": "ko",
+  "display_override": [
+    "fullscreen",
+    "minimal-ui",
+    "browser",
+    "standalone",
+    "window-controls-overlay"
+  ]
 }
