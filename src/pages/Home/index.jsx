@@ -7,6 +7,7 @@ import {
   ROUTES_PATH_MY_PAGE,
   ROUTES_PATH_NOTICE,
   ROUTES_PATH_QUESTION,
+  ROUTES_PATH_RANK,
 } from "constants/Routes";
 
 function Home() {
@@ -87,7 +88,7 @@ function Home() {
       </Menu>
       <Menu style={{ height: "50px", margin: "12px 0px" }}>
         <MenuButton
-          onClick={() => navigate(ROUTES_PATH_NOTICE)}
+          onClick={() => navigate(ROUTES_PATH_RANK)}
           subTitle={"헌혈 명예의 전당"}
           size={"small"}
           icon={"png/rank.png"}

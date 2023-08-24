@@ -6,5 +6,6 @@ export const ROUTES_PATH_HOME = "/home";
 export const ROUTES_PATH_BLOOD_REQUEST = "/blood-request";
 export const ROUTES_PATH_BLOOD_REQUESTS = "/blood-requests";
 export const ROUTES_PATH_NOTICE = "/notice";
+export const ROUTES_PATH_RANK = "/rank";
 export const ROUTES_PATH_MY_PAGE = "/my-page";
 export const ROUTES_PATH_QUESTION = "/question";

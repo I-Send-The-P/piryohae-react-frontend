@@ -6,12 +6,14 @@ import {
   ROUTES_PATH_SIGNUP,
   ROUTES_PATH_ROOT,
   ROUTES_PATH_NOTICE,
+  ROUTES_PATH_RANK,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Signup from "pages/Signup";
 import Notice from "pages/Notice";
+import Rank from "pages/Rank";
 
 function App() {
   return (
@@ -46,6 +48,14 @@ function App() {
           element={
             <BaseLayout title={"공지사항"} isLogin={true}>
               <Notice />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_RANK}
+          element={
+            <BaseLayout title={"명예의 전당"} isLogin={true}>
+              <Rank />
             </BaseLayout>
           }
         />
