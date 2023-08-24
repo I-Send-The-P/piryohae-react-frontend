@@ -5,11 +5,13 @@ import {
   ROUTES_PATH_LOGIN,
   ROUTES_PATH_SIGNUP,
   ROUTES_PATH_ROOT,
+  ROUTES_PATH_NOTICE,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
 import Login from "pages/Login";
 import Signup from "pages/Signup";
+import Notice from "pages/Notice";
 
 function App() {
   return (
@@ -36,6 +38,14 @@ function App() {
           element={
             <BaseLayout title={"회원가입"} isLogin={false}>
               <Signup />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_NOTICE}
+          element={
+            <BaseLayout title={"공지사항"} isLogin={true}>
+              <Notice />
             </BaseLayout>
           }
         />

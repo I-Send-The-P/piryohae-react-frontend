@@ -6,7 +6,7 @@ export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 20px;
+  padding: 20px 20px;
   background: #f5f5f5;
   overflow: hidden scroll;
   height: max-content;
