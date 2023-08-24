@@ -76,7 +76,7 @@ const TopBar = ({ title, isHome }) => {
   const navigate = useNavigate();
   return (
     <TopBarStyle>
-      {isHome ?? <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>}
+      {isHome || <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>}
       <Logo>{title}</Logo>
       <Alarm />
     </TopBarStyle>

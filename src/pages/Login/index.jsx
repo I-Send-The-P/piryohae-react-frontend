@@ -18,7 +18,7 @@ function Login() {
   return (
     <ContentContainer style={{ paddingTop: "98px" }}>
       <Title>피료해</Title>
-      <SubTitle>로그인</SubTitle>
+      <SubTitle></SubTitle>
       <Input
         placeholder="아이디"
         value={id}
