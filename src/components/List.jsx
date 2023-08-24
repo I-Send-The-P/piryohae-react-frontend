@@ -90,7 +90,7 @@ export const ListItem = ({ bloodType, status, title, date, content }) => {
             color: "#fff",
           }}
         >
-          {status ? "헌혈완료" : "헌혈대기"}
+          {status}
         </Tag>
         <Date>{date}</Date>
       </ListItemHeader>
