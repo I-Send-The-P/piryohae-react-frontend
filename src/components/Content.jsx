@@ -19,5 +19,6 @@ export const ContentTitle = styled.h1`
   line-height: normal;
   padding: 5px;
   border-bottom: 2px solid #c82525;
+  margin: 0;
   width: 100%;
 `;

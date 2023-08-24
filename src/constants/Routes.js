@@ -1,4 +1,9 @@
 export const ROUTES_BASENAME = process.env.PUBLIC_URL;
-export const ROUTES_PATH_ROOT = '/';
-export const ROUTES_PATH_LOGIN = '/login';
-export const ROUTES_PATH_HOME = '/home';
+export const ROUTES_PATH_ROOT = "/";
+export const ROUTES_PATH_LOGIN = "/login";
+export const ROUTES_PATH_HOME = "/home";
+export const ROUTES_PATH_BLOOD_REQUEST = "/blood-request";
+export const ROUTES_PATH_BLOOD_REQUESTS = "/blood-requests";
+export const ROUTES_PATH_NOTICE = "/notice";
+export const ROUTES_PATH_MY_PAGE = "/my-page";
+export const ROUTES_PATH_QUESTION = "/question";
