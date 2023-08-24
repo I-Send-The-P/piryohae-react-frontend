@@ -9,6 +9,7 @@ import {
   ROUTES_PATH_RANK,
   ROUTES_PATH_QUESTION,
   ROUTES_PATH_QUESTION_NEW,
+  ROUTES_PATH_QUESTIONS,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
@@ -18,6 +19,7 @@ import Notice from "pages/Notice";
 import Rank from "pages/Rank";
 import Question from "pages/Question";
 import QuestionNew from "pages/Question/New";
+import Questions from "pages/Questions";
 
 function App() {
   return (
@@ -76,6 +78,14 @@ function App() {
           element={
             <BaseLayout title={"1:1 문의"} isLogin={true}>
               <QuestionNew />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_QUESTIONS}
+          element={
+            <BaseLayout title={"1:1 문의내역"} isLogin={true}>
+              <Questions />
             </BaseLayout>
           }
         />
