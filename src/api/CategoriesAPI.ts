@@ -8,18 +8,18 @@ import {
 } from "constants/Api";
 import axios from "axios";
 
-const getAcceptsStatusCategories = () => {
+export const getAcceptsStatusCategories = () => {
   return axios.get(BASE_URL + GET_ACCEPTS_STATUS_CATEGORIES);
 };
-const getBloodDonationCategories = () => {
+export const getBloodDonationCategories = () => {
   return axios.get(BASE_URL + GET_BLOOD_DONATION_CATEGORIES);
 };
-const getBloodTypeCategories = () => {
+export const getBloodTypeCategories = () => {
   return axios.get(BASE_URL + GET_BLOOD_TYPE_CATEGORIES);
 };
-const getQuestionTypeCategories = () => {
+export const getQuestionTypeCategories = () => {
   return axios.get(BASE_URL + GET_QUESTION_TYPE_CATEGORIES);
 };
-const getRequestsStatusCategories = () => {
+export const getRequestsStatusCategories = () => {
   return axios.get(BASE_URL + GET_REQUESTS_STATUS_CATEGORIES);
 };

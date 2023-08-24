@@ -9,21 +9,21 @@ import {
   BASE_URL,
 } from "constants/Api";
 
-const postDuplicateLoginId = (data) => {
+export const postDuplicateLoginId = (data) => {
   return axios.post(BASE_URL + POST_DUPLICATE_LOGINID, data);
 };
-const postDuplicateNickName = (data) => {
+export const postDuplicateNickName = (data) => {
   return axios.post(BASE_URL + POST_DUPLICATE_NICKNAME, data);
 };
-const postDuplicatePhoneNumber = (data) => {
+export const postDuplicatePhoneNumber = (data) => {
   return axios.post(BASE_URL + POST_DUPLICATE_PHONENUMBER, data);
 };
-const postMember = (data) => {
+export const postMember = (data) => {
   return axios.post(BASE_URL + POST_MEMBER, data);
 };
-const getMember = (id) => {
+export const getMember = (id) => {
   return axios.get(BASE_URL + GET_MEMBER.replace("{memberId}", id));
 };
-const putMember = (id, data) => {
+export const putMember = (id, data) => {
   return axios.put(BASE_URL + PUT_MEMBER.replace("{memberId}", id), data);
 };

@@ -8,18 +8,18 @@ import {
   BASE_URL,
 } from "constants/Api";
 
-const getBoards = () => {
+export const getBoards = () => {
   return axios.get(BASE_URL + GET_BOARDS);
 };
-const postBoard = (data) => {
+export const postBoard = (data) => {
   return axios.post(BASE_URL + POST_BOARD, data);
 };
-const getBoard = (id) => {
+export const getBoard = (id) => {
   return axios.get(BASE_URL + GET_BOARD.replace("{boardId}", id));
 };
-const patchBoard = (id, data) => {
+export const patchBoard = (id, data) => {
   return axios.patch(BASE_URL + PATCH_BOARD.replace("{boardId}", id), data);
 };
-const deleteBoard = (id) => {
+export const deleteBoard = (id) => {
   return axios.delete(BASE_URL + DELETE_BOARD.replace("{boardId}", id));
 };
