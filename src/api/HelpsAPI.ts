@@ -9,24 +9,24 @@ import {
   BASE_URL,
 } from "constants/Api";
 
-const PostQuestion = (id, data) => {
+const postQuestion = (id, data) => {
   return axios.post(BASE_URL + POST_QUESTION.replace("memberId", id), data);
 };
-const GetQuestions = (id) => {
+const getQuestions = (id) => {
   return axios.get(BASE_URL + GET_QUESTIONS.replace("memberId", id));
 };
-const PatchQuestion = (id, data) => {
+const patchQuestion = (id, data) => {
   return axios.patch(
     BASE_URL + PATCH_QUESTION.replace("{questionId}", id),
     data
   );
 };
-const GetQuestion = (id) => {
+const getQuestion = (id) => {
   return axios.get(BASE_URL + GET_QUESTION.replace("{questionId}", id));
 };
-const GetFaqs = () => {
+const getFaqs = () => {
   return axios.get(BASE_URL + GET_FAQS);
 };
-const PostAnswer = (id, data) => {
+const postAnswer = (id, data) => {
   return axios.post(BASE_URL + POST_ANSWER.replace("{questionId}", id), data);
 };

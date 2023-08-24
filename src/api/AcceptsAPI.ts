@@ -6,12 +6,12 @@ import {
   BASE_URL,
 } from "constants/Api";
 
-const GetAcceptsCount = (id) => {
+const getAcceptsCount = (id) => {
   return axios.get(BASE_URL + GET_ACCEPTS_COUNT.replace("{memberId}", id));
 };
-const GetRequestsMine = (id) => {
+const getRequestsMine = (id) => {
   return axios.get(BASE_URL + GET_REQUESTS_MINE.replace("{memberId}", id));
 };
-const GetAcceptsMine = (id) => {
+const getAcceptsMine = (id) => {
   return axios.get(BASE_URL + GET_ACCEPTS_MINE.replace("{memberId}", id));
 };

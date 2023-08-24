@@ -11,27 +11,27 @@ import {
   GET_HOSPITALS,
 } from "constants/Api";
 
-const GetRequests = () => {
+const getRequests = () => {
   return axios.get(BASE_URL + GET_REQUESTS);
 };
-const GetRequest = (id) => {
+const getRequest = (id) => {
   return axios.get(BASE_URL + GET_REQUEST.replace("{requestId}", id));
 };
-const PostRequest = (data: any) => {
+const postRequest = (data: any) => {
   return axios.post(BASE_URL + POST_REQUEST, data);
 };
-const DeleteRequest = (id) => {
+const deleteRequest = (id) => {
   return axios.delete(BASE_URL + DELETE_REQUEST.replace("{requestId}", id));
 };
-const PostAccept = (id) => {
+const postAccept = (id) => {
   return axios.post(BASE_URL + POST_ACCEPT.replace("{requestId}", id));
 };
-const PutComplete = (id) => {
+const putComplete = (id) => {
   return axios.put(BASE_URL + PUT_COMPLETE.replace("{requestId}", id));
 };
-const PutCancel = (id) => {
+const putCancel = (id) => {
   return axios.put(BASE_URL + PUT_CANCEL.replace("{requestId}", id));
 };
-const GetHospitals = (id) => {
+const getHospitals = (id) => {
   return axios.get(BASE_URL + GET_HOSPITALS.replace("{requestId}", id));
 };
