@@ -120,7 +120,7 @@ const QuestionDate = styled.div`
 `;
 
 const Hr = styled.hr`
-  border: 1px solid #676767;
+  border: 1px solid #dddddd;
   width: 100%;
 `;
 export const QuestionItem = ({

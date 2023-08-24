@@ -8,6 +8,7 @@ import {
   ROUTES_PATH_NOTICE,
   ROUTES_PATH_RANK,
   ROUTES_PATH_QUESTION,
+  ROUTES_PATH_QUESTION_NEW,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
@@ -16,6 +17,7 @@ import Signup from "pages/Signup";
 import Notice from "pages/Notice";
 import Rank from "pages/Rank";
 import Question from "pages/Question";
+import QuestionNew from "pages/Question/New";
 
 function App() {
   return (
@@ -66,6 +68,14 @@ function App() {
           element={
             <BaseLayout title={"고객센터"} isLogin={true}>
               <Question />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_QUESTION_NEW}
+          element={
+            <BaseLayout title={"1:1 문의"} isLogin={true}>
+              <QuestionNew />
             </BaseLayout>
           }
         />

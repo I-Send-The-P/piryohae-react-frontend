@@ -17,6 +17,23 @@ export const TextInput = styled.input`
     outline: none;
   }
 `;
+export const TextArea = styled.textarea`
+  box-sizing: border-box;
+
+  width: 100%;
+  padding: 10px;
+  border-radius: 7px;
+  background: #fff;
+  border: none;
+  text-align: center;
+  font-family: Cafe24 Ssurround air;
+  &:focus,
+  &:active,
+  &:focus-visible {
+    border: 2px solid #c82525;
+    outline: none;
+  }
+`;
 
 export const Button = styled.button`
   width: 100%;

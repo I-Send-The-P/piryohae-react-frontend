@@ -2,9 +2,15 @@ import { ContentContainer, ContentTitle } from "components/Content";
 import { Menu, MenuButton } from "pages/Home/styled";
 import { Tag, TagList, QuestionList, QuestionItem } from "./styled";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  ROUTES_PATH_QUESTION_NEW,
+  ROUTES_PATH_QUESTIONS,
+} from "constants/Routes";
 
 function Question() {
   const [type, setType] = useState(1);
+  const navigate = useNavigate();
   return (
     <ContentContainer>
       <ContentTitle>1:1 문의</ContentTitle>
@@ -13,12 +19,14 @@ function Question() {
           subTitle={"1:1"}
           title={"문의하기"}
           size="small"
+          onClick={() => navigate(ROUTES_PATH_QUESTION_NEW)}
         ></MenuButton>
         <MenuButton
           subTitle={"1:1"}
           title={"문의내역"}
           icon={"png/list.png"}
           size="small"
+          onClick={() => navigate(ROUTES_PATH_QUESTIONS)}
         ></MenuButton>
       </Menu>
       <ContentTitle>많이하는 질문</ContentTitle>
