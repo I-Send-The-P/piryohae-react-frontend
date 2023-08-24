@@ -14,6 +14,7 @@ import {
   ROUTES_PATH_BLOOD_REQUESTS,
   ROUTES_PATH_BLOOD_REQUEST,
   ROUTES_PATH_BLOOD_REQUEST_NEW,
+  ROUTES_PATH_BLOOD_REQUEST_CAUTION,
   ROUTES_PATH_BLOOD_REQUEST_COMPLETE,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
@@ -30,6 +31,7 @@ import Requests from "pages/Requests";
 import Request from "pages/Request";
 import RequestNew from "pages/Request/New";
 import RequestComplete from "pages/Request/Complete";
+import RequestCaution from "pages/Request/Caution";
 
 function App() {
   return (
@@ -128,6 +130,14 @@ function App() {
           element={
             <BaseLayout title={"긴급헌혈 요청서"} isLogin={true}>
               <RequestNew />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_BLOOD_REQUEST_CAUTION}
+          element={
+            <BaseLayout title={"헌혈 유의 사항"} isLogin={true}>
+              <RequestCaution />
             </BaseLayout>
           }
         />

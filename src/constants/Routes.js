@@ -7,6 +7,7 @@ export const ROUTES_PATH_HOME = "/home";
 export const ROUTES_PATH_BLOOD_REQUEST = "/blood-request";
 export const ROUTES_PATH_BLOOD_REQUEST_NEW = "/blood-request/new";
 export const ROUTES_PATH_BLOOD_REQUEST_COMPLETE = "/blood-request/complete";
+export const ROUTES_PATH_BLOOD_REQUEST_CAUTION = "/blood-request/caution";
 export const ROUTES_PATH_BLOOD_REQUESTS = "/blood-requests";
 export const ROUTES_PATH_NOTICE = "/notice";
 export const ROUTES_PATH_RANK = "/rank";
