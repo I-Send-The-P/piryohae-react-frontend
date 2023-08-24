@@ -1,8 +1,9 @@
-import { Container, SubTitle, Title, Input, LoginButton } from "./styled";
+import { SubTitle, Title, Input, LoginButton } from "./styled";
 import { TextLink } from "components/Input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTES_PATH_HOME } from "constants/Routes";
+import { ContentContainer } from "components/Content";
 
 function Login() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function Login() {
   };
 
   return (
-    <Container>
+    <ContentContainer>
       <Title>피료해</Title>
       <SubTitle>로그인</SubTitle>
       <Input
@@ -32,7 +33,7 @@ function Login() {
       <LoginButton onClick={login}>로그인</LoginButton>
       <TextLink to="/signup">회원가입</TextLink>
       {/* <TextLink href="/idpw">아이디/비밀번호 찾기</TextLink> */}
-    </Container>
+    </ContentContainer>
   );
 }
 

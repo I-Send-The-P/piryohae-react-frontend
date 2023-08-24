@@ -1,16 +1,6 @@
 import styled from "styled-components";
 import { Button, TextInput } from "components/Input";
 
-export const Container = styled.div`
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 98px 20px 0px;
-`;
-
 export const Title = styled.h1`
   color: #000;
   text-align: center;
