@@ -8,7 +8,7 @@ export const ContentContainer = styled.div`
   align-items: center;
   padding: 0px 20px;
   background: #f5f5f5;
-  overflow-y: scroll;
+  overflow: hidden scroll;
   height: max-content;
 `;
 
