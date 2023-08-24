@@ -11,18 +11,30 @@ import Login from "pages/Login";
 
 function App() {
   return (
-    <BaseLayout>
-      <BrowserRouter basename={ROUTES_BASENAME}>
-        <Routes>
-          <Route path={ROUTES_PATH_HOME} element={<Home />} />
-          <Route path={ROUTES_PATH_LOGIN} element={<Login />} />
-          <Route
-            path={ROUTES_PATH_ROOT}
-            element={<Navigate to={ROUTES_PATH_HOME} />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </BaseLayout>
+    <BrowserRouter basename={ROUTES_BASENAME}>
+      <Routes>
+        <Route
+          path={ROUTES_PATH_HOME}
+          element={
+            <BaseLayout title={"피료해"}>
+              <Home />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_LOGIN}
+          element={
+            <BaseLayout title={"로그인"}>
+              <Login />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_ROOT}
+          element={<Navigate to={ROUTES_PATH_HOME} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 const { styled } = require("styled-components");
 
-export const BaseLayout = ({ children }) => {
+export const BaseLayout = ({ children, title }) => {
   return (
     <Container>
-      <TopBar />
+      <TopBar title={title} />
       {children}
     </Container>
   );
@@ -70,11 +72,12 @@ const Alarm = styled.button`
   background-size: 100% 100%;
 `;
 
-const TopBar = () => {
+const TopBar = ({ title }) => {
+  const navigate = useNavigate();
   return (
     <TopBarStyle>
-      <BackButton>&lt;</BackButton>
-      <Logo>로그인</Logo>
+      <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>
+      <Logo>{title}</Logo>
       <Alarm />
     </TopBarStyle>
   );
