@@ -2,7 +2,7 @@ import { ContentContainer, ContentTitle } from "components/Content";
 import { MenuButton, Menu, Banner } from "./styled";
 import { useNavigate } from "react-router-dom";
 import {
-  ROUTES_PATH_BLOOD_REQUEST,
+  ROUTES_PATH_BLOOD_REQUEST_NEW,
   ROUTES_PATH_BLOOD_REQUESTS,
   ROUTES_PATH_MY_PAGE,
   ROUTES_PATH_NOTICE,
@@ -17,7 +17,7 @@ function Home() {
       <ContentTitle style={{ margin: "0px 0px 10px" }}>긴급헌혈</ContentTitle>
       <Menu>
         <MenuButton
-          onClick={() => navigate(ROUTES_PATH_BLOOD_REQUEST)}
+          onClick={() => navigate(ROUTES_PATH_BLOOD_REQUEST_NEW)}
           subTitle={"긴급헌혈"}
           title={"요청하기"}
           size={"big"}

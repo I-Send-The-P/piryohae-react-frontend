@@ -5,6 +5,7 @@ export const ROUTES_PATH_LOGIN = "/login";
 export const ROUTES_PATH_SIGNUP = "/signup";
 export const ROUTES_PATH_HOME = "/home";
 export const ROUTES_PATH_BLOOD_REQUEST = "/blood-request";
+export const ROUTES_PATH_BLOOD_REQUEST_NEW = "/blood-request/new";
 export const ROUTES_PATH_BLOOD_REQUESTS = "/blood-requests";
 export const ROUTES_PATH_NOTICE = "/notice";
 export const ROUTES_PATH_RANK = "/rank";

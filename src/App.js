@@ -11,6 +11,9 @@ import {
   ROUTES_PATH_QUESTION_NEW,
   ROUTES_PATH_QUESTIONS,
   ROUTES_PATH_MY_PAGE,
+  ROUTES_PATH_BLOOD_REQUESTS,
+  ROUTES_PATH_BLOOD_REQUEST,
+  ROUTES_PATH_BLOOD_REQUEST_NEW,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
@@ -22,6 +25,9 @@ import Question from "pages/Question";
 import QuestionNew from "pages/Question/New";
 import Questions from "pages/Questions";
 import MyPage from "pages/MyPage";
+import Requests from "pages/Requests";
+import Request from "pages/Request";
+import RequestNew from "pages/Request/New";
 
 function App() {
   return (
@@ -88,6 +94,38 @@ function App() {
           element={
             <BaseLayout title={"1:1 문의내역"} isLogin={true}>
               <Questions />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_MY_PAGE}
+          element={
+            <BaseLayout title={"MY PAGE"} isLogin={true}>
+              <MyPage />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_BLOOD_REQUESTS}
+          element={
+            <BaseLayout title={"긴급헌혈 요청목록"} isLogin={true}>
+              <Requests />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_BLOOD_REQUEST}
+          element={
+            <BaseLayout title={"긴급헌혈 요청서"} isLogin={true}>
+              <Request />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_BLOOD_REQUEST_NEW}
+          element={
+            <BaseLayout title={"긴급헌혈 요청서"} isLogin={true}>
+              <RequestNew />
             </BaseLayout>
           }
         />
