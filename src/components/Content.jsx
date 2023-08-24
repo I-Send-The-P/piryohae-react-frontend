@@ -24,3 +24,24 @@ export const ContentTitle = styled.h1`
   margin: 0;
   width: 100%;
 `;
+
+export const ContentSubTitle = styled.h2`
+  color: #979797;
+  text-align: right;
+  font-family: Cafe24 Ssurround;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 5px;
+  border-bottom: 2px solid #c82525;
+  margin: 0;
+  width: 100%;
+`;
+
+export const ContentHeader = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: end;
+  justify-content: center;
+`;

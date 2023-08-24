@@ -51,6 +51,12 @@ export const Button = styled.button`
   line-height: normal;
 `;
 
+export const BorderedButton = styled(Button)`
+  background: #fff;
+  border: 1px solid #c82525;
+  color: #c82525;
+`;
+
 export const TextLink = styled(Link)`
   color: #000;
   text-align: center;
