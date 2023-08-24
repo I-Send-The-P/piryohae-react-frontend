@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 export const Menu = styled.div`
   box-sizing: border-box;
@@ -79,11 +80,56 @@ export const MenuButton = ({
 };
 
 const BannerStyle = styled.div`
+  position: relative;
   width: 100%;
   height: 120px;
   background-color: #d9d9d9;
   border-radius: 16px;
+  overflow: hidden;
 `;
+const BannerImage = styled.img`
+  width: 100%;
+  height: 100%;
+`;
+const IndexCircleContainer = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+const IndexCircle = styled.div`
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: ${(props) => (props.active ? "#000" : "#fff")};
+  margin: 0px 5px;
+`;
+
 export const Banner = () => {
-  return <BannerStyle></BannerStyle>;
+  const [banner, setBanner] = useState(1);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBanner((banner) => (banner + 1 > 4 ? 1 : banner + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <BannerStyle>
+      <BannerImage src={`/png/banner${banner}.png`} />
+      <IndexCircleContainer>
+        {Array(4)
+          .fill()
+          .map((_, index) => (
+            <IndexCircle
+              onClick={() => setBanner(index + 1)}
+              active={index + 1 === banner}
+            />
+          ))}
+      </IndexCircleContainer>
+    </BannerStyle>
+  );
 };
