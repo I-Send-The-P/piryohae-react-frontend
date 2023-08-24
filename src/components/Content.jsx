@@ -3,11 +3,13 @@ import styled from "styled-components";
 export const ContentContainer = styled.div`
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px 20px;
+  background: #f5f5f5;
+  overflow-y: scroll;
+  height: max-content;
 `;
 
 export const ContentTitle = styled.h1`

@@ -3,11 +3,13 @@ import {
   ROUTES_BASENAME,
   ROUTES_PATH_HOME,
   ROUTES_PATH_LOGIN,
+  ROUTES_PATH_SIGNUP,
   ROUTES_PATH_ROOT,
 } from "./constants/Routes";
 import { BaseLayout } from "components/Layout";
 import Home from "pages/Home";
 import Login from "pages/Login";
+import Signup from "pages/Signup";
 
 function App() {
   return (
@@ -24,8 +26,16 @@ function App() {
         <Route
           path={ROUTES_PATH_LOGIN}
           element={
-            <BaseLayout title={"로그인"}>
+            <BaseLayout title={"로그인"} isLogin={false}>
               <Login />
+            </BaseLayout>
+          }
+        />
+        <Route
+          path={ROUTES_PATH_SIGNUP}
+          element={
+            <BaseLayout title={"회원가입"} isLogin={false}>
+              <Signup />
             </BaseLayout>
           }
         />

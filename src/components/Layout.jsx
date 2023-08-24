@@ -2,10 +2,15 @@ import { useNavigate } from "react-router-dom";
 
 const { styled } = require("styled-components");
 
-export const BaseLayout = ({ children, title, isHome = false }) => {
+export const BaseLayout = ({
+  children,
+  title,
+  isHome = false,
+  isLogin = true,
+}) => {
   return (
     <Container>
-      <TopBar title={title} isHome={isHome} />
+      <TopBar title={title} isHome={isHome} isLogin={isLogin} />
       {children}
     </Container>
   );
@@ -16,7 +21,8 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f5f5f5;
+  overflow: hidden;
+  background-color: #f5f5f5;
 `;
 
 const TopBarStyle = styled.div`
@@ -49,7 +55,6 @@ const BackButton = styled.div`
 
 const Logo = styled.div`
   display: flex;
-  width: 91px;
   height: 39px;
   flex-direction: column;
   justify-content: center;
@@ -72,13 +77,18 @@ const Alarm = styled.button`
   background-size: 100% 100%;
 `;
 
-const TopBar = ({ title, isHome }) => {
+const Blank = styled.div`
+  width: 28px;
+  height: 28px;
+`;
+
+const TopBar = ({ title, isHome, isLogin }) => {
   const navigate = useNavigate();
   return (
     <TopBarStyle>
       {isHome || <BackButton onClick={() => navigate(-1)}>&lt;</BackButton>}
       <Logo>{title}</Logo>
-      <Alarm />
+      {isLogin ? <Alarm /> : <Blank />}
     </TopBarStyle>
   );
 };

@@ -43,3 +43,12 @@ export const TextLink = styled(Link)`
   font-weight: 300;
   line-height: normal;
 `;
+
+export const Title = styled.span`
+  color: #000;
+  font-family: Cafe24 Ssurround air;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 213.023%;
+`;
