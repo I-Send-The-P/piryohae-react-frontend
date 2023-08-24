@@ -10,6 +10,7 @@ export const Menu = styled.div`
 `;
 
 export const MenuItem = styled.div`
+  box-sizing: border-box;
   position: relative;
   flex: 1;
   flex-shrink: 0;
