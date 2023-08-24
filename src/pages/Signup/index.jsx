@@ -23,7 +23,7 @@ function Signup() {
   const [isPhoneChecked, setIsPhoneChecked] = useState(false);
   const [address, setAddress] = useState("");
   const [detailAddress, setDetailAddress] = useState("");
-  const [blood, setBlood] = useState("A");
+  const [blood, setBlood] = useState("A+");
   const [nickname, setNickname] = useState("");
   const [isNicknameChecked, setIsNicknameChecked] = useState(false);
 
@@ -120,10 +120,14 @@ function Signup() {
       ></TextInput>
       <LeftTitle>혈액</LeftTitle>
       <Select value={blood} onChange={(e) => setBlood(e.target.value)}>
-        <option value={"A"}>A</option>
-        <option value={"B"}>B</option>
-        <option value={"O"}>O</option>
-        <option value={"AB"}>AB</option>
+        <option value={"A+"}>A+</option>
+        <option value={"A-"}>A-</option>
+        <option value={"B+"}>B+</option>
+        <option value={"B-"}>B-</option>
+        <option value={"O+"}>O+</option>
+        <option value={"O-"}>O-</option>
+        <option value={"AB+"}>AB+</option>
+        <option value={"AB-"}>AB-</option>
       </Select>
       <LeftTitle>닉네임</LeftTitle>
       <CheckContainer>
