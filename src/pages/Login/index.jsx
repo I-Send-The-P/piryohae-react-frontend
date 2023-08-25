@@ -2,8 +2,9 @@ import { SubTitle, Input, LoginButton, Logo } from "./styled";
 import { TextLink } from "components/Input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ROUTES_PATH_HOME } from "constants/Routes";
 import { ContentContainer } from "components/Content";
+import { postLogin } from "api/MembersAPI";
+import { setMemberId } from "util/localstorage";
 
 function Login() {
   const navigate = useNavigate();
@@ -12,7 +13,13 @@ function Login() {
 
   const login = () => {
     console.log(id, pw);
-    navigate(ROUTES_PATH_HOME);
+    postLogin({
+      loginId: id,
+      password: pw,
+    }).then((res) => {
+      setMemberId(res.data);
+      // navigate(ROUTES_PATH_HOME);
+    });
   };
 
   return (

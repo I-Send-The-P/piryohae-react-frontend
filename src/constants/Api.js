@@ -34,6 +34,7 @@ export const POST_DUPLICATE_PHONENUMBER =
 export const POST_MEMBER = "/api/members";
 export const GET_MEMBER = "/api/members/{memberId}";
 export const PUT_MEMBER = "/api/members/{memberId}";
+export const POST_LOGIN = "/api/members/login";
 // ACCEPTS
 export const GET_ACCEPTS_COUNT = "/api/accepts/count?memberId={memberId}";
 export const GET_REQUESTS_MINE = "/api/requests/{member_id}";

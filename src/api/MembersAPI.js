@@ -6,6 +6,7 @@ import {
   POST_MEMBER,
   GET_MEMBER,
   PUT_MEMBER,
+  POST_LOGIN,
   BASE_URL,
 } from "constants/Api";
 
@@ -32,4 +33,7 @@ export const getMember = (id) => {
 };
 export const putMember = (id, data) => {
   return axios.put(BASE_URL + PUT_MEMBER.replace("{memberId}", id), data);
+};
+export const postLogin = (data) => {
+  return axios.post(BASE_URL + POST_LOGIN, data);
 };
